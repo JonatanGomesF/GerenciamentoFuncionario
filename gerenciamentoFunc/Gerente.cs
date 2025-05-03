@@ -8,13 +8,21 @@ namespace gerenciamentoFunc
 {
     public class Gerente : Funcionario
     {
-        public int Bonus {  get; set; }
+        public decimal Bonus {  get; set; }
+        public decimal Impostos { get; set; }
 
         public Gerente(string nome, int idade, string cargo, decimal salario,
-            string formaPagamento, string metEntrPag, int bonus) 
+            string formaPagamento, string metEntrPag, decimal bonus, decimal impostos) 
             : base(nome, idade, cargo, salario, formaPagamento, metEntrPag)
         {
             Bonus = bonus;
+            Impostos = impostos;
+            
+        }
+
+        public override decimal CalcularSalario()
+        {
+            return Salario + Bonus - Impostos;  
         }
     
         public override void DisplayInfo()
@@ -23,7 +31,7 @@ namespace gerenciamentoFunc
             Console.WriteLine($"Bonus: {Bonus}");
         }
  
-      
+            
 
 
 

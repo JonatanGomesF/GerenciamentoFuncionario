@@ -1,0 +1,6 @@
+achei algumas dificuldades, com os argumentos impostos e
+bonus de gerente pois como impostos está decimal, estava apresentand erros
+constantes; mas como imposto de gerente é de 0.275 ele não aceitou nem o ponto
+e nem virgula e me corrigia dizendo que era double;
+
+Argumento 8: não é possível converter de "double" para "decimal"

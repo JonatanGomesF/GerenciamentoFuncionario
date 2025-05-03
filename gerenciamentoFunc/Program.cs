@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Gerente gerente = new Gerente("Jonatan", 29, 
+                "Gerente de projetos na IBM", 10000m, "pix",
+                "automatico", 2000, 0275 );
+
+
         }
     }
 }

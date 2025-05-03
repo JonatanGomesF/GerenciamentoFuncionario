@@ -33,5 +33,7 @@ namespace gerenciamentoFunc
                 $"Forma de pagamento Pix, debito em conta ou Dinheiro?{FormaPagamento} " +
                 $"metodo de entrega/pagamento: {MetodoEntregaPagamento}");
         }
+
+        public abstract decimal CalcularSalario();
     }
 }
