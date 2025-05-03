@@ -9,14 +9,14 @@ namespace gerenciamentoFunc
     public class Gerente : Funcionario
     {
         private decimal Bonus {  get; set; }
-        private decimal Impostos { get; set; }
+        
 
         public Gerente(string nome, int idade, string cargo, decimal salario,
             string formaPagamento, string metEntrPag, decimal bonus, decimal impostos) 
-            : base(nome, idade, cargo, salario, formaPagamento, metEntrPag)
+            : base(nome, idade, cargo, salario, formaPagamento, metEntrPag, impostos)
         {
             Bonus = bonus;
-            Impostos = impostos;
+           
             
         }
 
@@ -28,7 +28,7 @@ namespace gerenciamentoFunc
 
         public override decimal CalcularImpostos()
         {
-            return Salario * 27 %;
+            return Salario * 27.5m;
         }
 
         public override string EntregarPagamento()
