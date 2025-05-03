@@ -20,15 +20,17 @@ namespace gerenciamentoFunc
             
         }
 
-        public override decimal CalcularSalario()
-        {
-            return Salario + Bonus - Impostos;  
-        }
-
-
+  
         public override decimal CalcularImpostos()
         {
-            return Salario * 27.5m;
+            Impostos = Salario * 0.275m;
+            return Impostos;
+        }
+
+        public override decimal CalcularSalario()
+        {
+            
+            return Salario + Bonus - CalcularImpostos();
         }
 
         public override string EntregarPagamento()
@@ -40,9 +42,9 @@ namespace gerenciamentoFunc
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Console.WriteLine($"Bonus: {Bonus}, Impostos: {Impostos}");
-            Console.WriteLine($"Salário final: {CalcularSalario()}");
-            Console.WriteLine($"o salário mais impostos é de: {CalcularImpostos()}");
+            Console.WriteLine($"Bonus: {Bonus}");
+            Console.WriteLine($"Impostos calculados: {CalcularImpostos():C}");
+            Console.WriteLine($"Salário final: {CalcularSalario():C}");
         }
     }
 }

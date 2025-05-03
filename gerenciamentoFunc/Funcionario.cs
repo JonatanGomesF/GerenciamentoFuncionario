@@ -1,44 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gerenciamentoFunc
+﻿namespace gerenciamentoFunc
 {
-    public abstract class Funcionario(string nome, int idade, string cargo, decimal salario,
-        string formaPagamento, string metEntrPag, decimal impostos)
+    public abstract class Funcionario
     {
-        public string Nome { get; set; } = nome;
-        public int Idade { get; set; } = idade;
-        public string Cargo { get; set; } = cargo;
-        public decimal Salario { get; set; } = salario;
-        public string FormaPagamento { get; set; } = formaPagamento;
-        public string MetodoEntregaPagamento { get; set; } = metEntrPag;
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        public string Cargo { get; set; }
+        public decimal Salario { get; set; }
+        public string FormaPagamento { get; set; }
+        public string MetodoEntregaPagamento { get; set; }
+        public decimal Impostos { get; set; }
 
-        public decimal Impostos { get; set; } = impostos;
+        public Funcionario(string nome, int idade, string cargo, decimal salario,
+            string formaPagamento, string metEntrPag, decimal impostos)
+        {
+            Nome = nome;
+            Idade = idade;
+            Cargo = cargo;
+            Salario = salario;
+            FormaPagamento = formaPagamento;
+            MetodoEntregaPagamento = metEntrPag;
+            Impostos = impostos;
+        }
 
         public virtual void DisplayInfo()
         {
-            Console.WriteLine($"Nome: {Nome}, Cargo: {Cargo}, Salario: {Salario}," +
-                $"Forma de pagamento Pix, debito em conta ou Dinheiro?{FormaPagamento} " +
-                $"metodo de entrega/pagamento: {MetodoEntregaPagamento}," +
-                $"impostos: {Impostos}");
-        }
-        public override string ToString()
-        {
-            return $"Nome: {Nome}, Idade: {Idade}, Cargo: {Cargo}, Salário: {Salario:C}, Forma de Pagamento: {FormaPagamento}, Método de Entrada: {MetodoEntregaPagamento}";
+            Console.WriteLine($"Nome: {Nome}, Idade: {Idade}, Cargo: {Cargo}, Salário Base: {Salario:C}");
+            Console.WriteLine($"Forma de pagamento: {FormaPagamento}, Entrega: {MetodoEntregaPagamento}");
         }
 
         public abstract decimal CalcularSalario();
-        public virtual decimal CalcularImpostos()
-        {
-            return CalcularImpostos();
-        }
+        public abstract decimal CalcularImpostos();
+        
+       
 
         public virtual string EntregarPagamento()
         {
-            return MetodoEntregaPagamento;
-                }
+            return $"O pagamento será entregue via: {MetodoEntregaPagamento}";
+        }
     }
 }

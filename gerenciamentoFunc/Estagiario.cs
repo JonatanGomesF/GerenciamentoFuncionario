@@ -20,10 +20,24 @@ namespace gerenciamentoFunc
             return Salario;
         }
 
+        public override decimal CalcularImpostos()
+        {
+            
+            Impostos = 0;
+            return Impostos;
+        }
+
         public override string EntregarPagamento()
         {
             return $"O pagamento será entregue" +
                 $" de forma: {MetodoEntregaPagamento}";
+        }
+
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine($"Impostos:{CalcularImpostos():C}");
+            Console.WriteLine($"Salario Final: {CalcularSalario():C}");
         }
     }
 }

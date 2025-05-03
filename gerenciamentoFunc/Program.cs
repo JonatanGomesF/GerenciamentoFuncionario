@@ -2,13 +2,13 @@
 {
     internal class Program
     {
-        static List<Funcionario> funcionarios = new List    <Funcionario>();
+        static List<Funcionario> funcionarios = new List <Funcionario>();
         static void Main(string[] args)
         {
 
             Gerente gerente = new ("Jonatan", 29, 
                 "Gerente de projetos na IBM", 10000m, "pix",
-                "automatico", 2000, 0275);
+                "automatico", 2000, 0275); 
 
             Desenvolvedor dev = new ("Jonatan", 29,
               "desenvolvedor C# na IBM", 8000m, "Dinheiro", "automatico", 10, 50, 0.1m);
@@ -21,7 +21,10 @@
             funcionarios.Add(joao);
             foreach (var f in funcionarios)
             {
-                Console.WriteLine(f);
+                f.DisplayInfo();
+                Console.WriteLine("--------------------------");
+
+                Console.ReadLine(); 
             }
         }
     }

@@ -4,8 +4,8 @@ namespace gerenciamentoFunc
 {
     internal class Desenvolvedor : Funcionario
     {
-        private int HorasExtras { get; set; }
-        private decimal ValorPorHorasExtras { get; set; }
+        public int HorasExtras { get; set; }
+        public decimal ValorPorHorasExtras { get; set; }
 
         public Desenvolvedor(string nome, int idade, string cargo,
             decimal salario, string formaPagamento, string metEntrPag,
@@ -16,14 +16,15 @@ namespace gerenciamentoFunc
             ValorPorHorasExtras = valorPorHorasExtras;
         }
 
+        public override decimal CalcularImpostos()
+        {
+            Impostos = Salario * 0.10m; 
+            return Impostos;
+        }
+
         public override decimal CalcularSalario()
         {
             return Salario + (HorasExtras * ValorPorHorasExtras) - CalcularImpostos();
-        }
-
-        public override decimal CalcularImpostos()
-        {
-            return Salario * 0.10m; // 10% de imposto
         }
 
         public override string EntregarPagamento()
@@ -35,9 +36,9 @@ namespace gerenciamentoFunc
         {
             base.DisplayInfo();
             Console.WriteLine($"Horas Extras: {HorasExtras}, Valor por Hora Extra: {ValorPorHorasExtras:C}");
-            Console.WriteLine($"Impostos: {CalcularImpostos():C}");
+            Console.WriteLine($"Impostos calculados: {CalcularImpostos():C}");
             Console.WriteLine($"Salário final: {CalcularSalario():C}");
+            Console.WriteLine(EntregarPagamento());
         }
-
     }
 }

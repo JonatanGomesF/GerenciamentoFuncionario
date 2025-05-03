@@ -1,0 +1,12 @@
+ao fazer o calculo em gerente:
+
+Impostos = Salario * 27.5m;
+            return Impostos;
+
+         notei que o programa reclamou e não me deixou continuar, essa
+         instrução foi dada no documento, mas o correto seria :
+
+         Impostos = Salario * 0.275m;
+            return Impostos;
+
+            somente assim deu um calculo certo de 27,5%
