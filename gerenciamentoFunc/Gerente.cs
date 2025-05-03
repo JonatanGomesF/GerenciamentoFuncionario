@@ -31,13 +31,5 @@ namespace gerenciamentoFunc
             Console.WriteLine($"Bonus: {Bonus}, Impostos: {Impostos}");
             Console.WriteLine($"Salário final: {CalcularSalario()}");
         }
- 
-            
-
-
-
-
-
-
     }
 }
