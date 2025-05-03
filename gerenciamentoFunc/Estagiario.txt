@@ -5,3 +5,6 @@ no documento..
 outra coisa que notei é que Funcionario (classe base) passa
 atributo Impostos mas Estagiario não necessita desse atributo, 
 mas mesmo assim no construtor de Estagiario ele está lá sem necessidade..
+(editado):
+
+resolvido esse problema era só colocar valor de impostos = 0m;
