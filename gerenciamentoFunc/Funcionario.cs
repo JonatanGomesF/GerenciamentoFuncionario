@@ -35,6 +35,14 @@ namespace gerenciamentoFunc
         }
 
         public abstract decimal CalcularSalario();
-        
+        public virtual decimal CalcularImpostos()
+        {
+            return CalcularImpostos();
+        }
+
+        public virtual string EntregarPagamento()
+        {
+            return MetodoEntregaPagamento;
+                }
     }
 }

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace gerenciamentoFunc
 {
-    internal class Desenvolvedor : Funcionario
-
-       private int HorasExtras {  get; set; }
-        private decimal ValorPorHorasExtras {  get; set; }
+    internal class Estagiario
     {
-
     }
 }

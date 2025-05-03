@@ -8,8 +8,8 @@ namespace gerenciamentoFunc
 {
     public class Gerente : Funcionario
     {
-        public decimal Bonus {  get; set; }
-        public decimal Impostos { get; set; }
+        private decimal Bonus {  get; set; }
+        private decimal Impostos { get; set; }
 
         public Gerente(string nome, int idade, string cargo, decimal salario,
             string formaPagamento, string metEntrPag, decimal bonus, decimal impostos) 
@@ -24,12 +24,25 @@ namespace gerenciamentoFunc
         {
             return Salario + Bonus - Impostos;  
         }
-    
+
+
+        public override decimal CalcularImpostos()
+        {
+            return Salario * 27 %;
+        }
+
+        public override string EntregarPagamento()
+        {
+            return $"O pagamento será entregue" +
+                $" de forma: {MetodoEntregaPagamento}";
+        }
+
         public override void DisplayInfo()
         {
             base.DisplayInfo();
             Console.WriteLine($"Bonus: {Bonus}, Impostos: {Impostos}");
             Console.WriteLine($"Salário final: {CalcularSalario()}");
+            Console.WriteLine($"o salário mais impostos é de: {CalcularImpostos()}");
         }
     }
 }

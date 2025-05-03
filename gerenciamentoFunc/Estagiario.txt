@@ -1,0 +1,7 @@
+ao tentar calcular salario de estagiario notei que nada 
+tinha para calcular, nao encontrei o salario de estagiario 
+no documento..
+
+outra coisa que notei é que Funcionario (classe base) passa
+atributo Impostos mas Estagiario não necessita desse atributo, 
+mas mesmo assim no construtor de Estagiario ele está lá sem necessidade..
