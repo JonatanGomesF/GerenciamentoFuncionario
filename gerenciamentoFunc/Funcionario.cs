@@ -35,5 +35,6 @@ namespace gerenciamentoFunc
         }
 
         public abstract decimal CalcularSalario();
+        
     }
 }

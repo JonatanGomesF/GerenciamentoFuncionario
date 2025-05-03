@@ -28,7 +28,8 @@ namespace gerenciamentoFunc
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Console.WriteLine($"Bonus: {Bonus}");
+            Console.WriteLine($"Bonus: {Bonus}, Impostos: {Impostos}");
+            Console.WriteLine($"Salário final: {CalcularSalario()}");
         }
  
             
