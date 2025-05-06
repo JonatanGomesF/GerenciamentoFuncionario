@@ -23,15 +23,16 @@ namespace gerenciamentoFunc
   
         public override decimal CalcularImpostos()
         {
-            Impostos = Salario * 0.275m;
+            Impostos = (Salario + Bonus) * 0.275m;
             return Impostos;
         }
 
         public override decimal CalcularSalario()
         {
-            
-            Salario = Salario + Bonus - CalcularImpostos();
-            return Salario;
+
+            decimal salarioTototal = Salario + Bonus;
+            decimal salarioLiquido = salarioTototal - CalcularImpostos();
+            return salarioLiquido;
         }
 
         public override string EntregarPagamento()
