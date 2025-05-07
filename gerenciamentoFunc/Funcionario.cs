@@ -29,8 +29,11 @@
         }
 
         public abstract decimal CalcularSalario();
-        public abstract decimal CalcularImpostos();
-        
+        public virtual decimal CalcularImpostos()
+        {
+            return 0;
+        }
+      
        
 
         public virtual string EntregarPagamento()
